@@ -1,0 +1,2 @@
+# 📚 About
+This project allows for controlling 3D objects on the frontend, created using ==React, react-three-fiber, Blender, and Figma==(The Coke can used in this project is part of my previous project. You can find more details about it [here](https://github.com/Bilovodskyi/3D-coca-cola)). The backend utilizes ==Python==, ==machine learning== (to train models to recognize gestures using a webcam), ==OpenCV, and MediaPipe== (to capture hand gestures). It is connected via ==WebSockets== for real-time data transfer between the frontend and backend.
