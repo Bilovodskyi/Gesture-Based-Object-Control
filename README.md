@@ -2,6 +2,10 @@
 
 Final version: 
 
+
+https://github.com/user-attachments/assets/ffb03f69-9e46-4c35-ad09-14b49d5dfee3
+
+
 # 📚 About
 
 This project allows for controlling 3D objects on the frontend, created using **React, react-three-fiber, Blender, and Figma**(The Coke can used in this project is part of my previous project. You can find more details about it [here](https://github.com/Bilovodskyi/3D-coca-cola)). The backend utilizes **Python**, **machine learning** (to train models to recognize gestures using a webcam), **OpenCV, and MediaPipe** (to capture hand gestures). It is connected via **WebSockets** for real-time data transfer between the frontend and backend.
@@ -21,15 +25,24 @@ The first intuitive approach to rotate our 3D object (I picked the OK gesture, w
 
 To fix this, I used the Scikit-learn library, which allows training a model to recognize only specific combinations of points as a separate gesture.
 
-The first video demonstrates the initial approach and the issues that came with it.
+The first video demonstrates the initial approach and the issues that came with it:
+
+
+https://github.com/user-attachments/assets/cf8f2d6c-b1aa-4822-baae-572c780b8eb1
+
 
 The second video shows the process of collecting samples (4 x 100) for training the model. The first two gestures represent the base case, showing the model how the hand might look when the gesture is not happening. Gestures 3 and 4 are used for rotating and changing the position of the 3D object.
 
-## Collecting Data
+
+https://github.com/user-attachments/assets/81477491-cb6e-496e-ae08-12aff8c768a2
+
+
+## Move and rotate object issue
 
 As you can see in the first video, the recognition of gestures is not the only issue. Since I was simply collecting the `x` and `y` values and passing them to the frontend, every time I moved my hand with an active gesture, then returned to the initial position with a non-active gesture to rotate the object further, it would jump back to the initial value.
 
 Here is a picture illustrating how Mediapipe collects `x` and `y` points:
+<img width="953" alt="Screenshot 2024-11-18 at 4 14 32 PM" src="https://github.com/user-attachments/assets/e1b0d0af-6ca9-4180-8c16-36c24ed5f094">
 
 For example, if we want:
 
